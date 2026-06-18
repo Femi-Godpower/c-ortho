@@ -1,5 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import "tailwindcss";
 @config "../../tailwind.config.mjs";
+
+@theme {
+  --font-roboto: "Roboto", sans-serif;
+  --font-size-fluid-title: clamp(3rem, 11.11vw, 10rem);
+  --font-size-fluid-h1: clamp(2.5rem, 6.67vw, 6rem);
+  --font-size-fluid-h2: clamp(2rem, 4.44vw, 4rem);
+  --font-size-fluid-h3: clamp(1.75rem, 3.33vw, 3rem);
+  --font-size-fluid-h4: clamp(1.5rem, 2.22vw, 2rem);
+  --font-size-fluid-h5: clamp(1.25rem, 1.67vw, 1.5rem);
+
+  --color-como-50: #f3f6f4;
+  --color-como-100: #e1eae2;
+  --color-como-200: #c5d5c9;
+  --color-como-300: #9eb7a5;
+  --color-como-400: #73947e;
+  --color-como-500: #557a62;
+  --color-como-600: #3e5d49;
+  --color-como-700: #324a3b;
+  --color-como-800: #293c31;
+  --color-como-900: #223229;
+  --color-como-950: #131b16;
+}
 
 @layer base {
   :root {

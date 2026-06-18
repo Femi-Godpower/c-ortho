@@ -4,6 +4,7 @@ import { createCmsRegistry, defineCmsComponent } from "@ominity/next/cms/renderi
 import { ButtonLinkBlock } from "@/components/cms/button-link-block";
 import { FormBlock } from "@/components/cms/form-block";
 import { HeroBlock } from "@/components/cms/hero-block";
+import { HeroSection } from "@/components/cms/hero-section";
 import { RichTextBlock } from "@/components/cms/rich-text-block";
 import { SliderBlock } from "@/components/cms/slider-block";
 import { TextBlock } from "@/components/cms/text-block";
@@ -22,6 +23,7 @@ export const cmsRegistry = createCmsRegistry<StarterRenderContext>([
   defineCmsComponent("slider", SliderBlock),
   defineCmsComponent("form_block", FormBlock),
   defineCmsComponent("2-column-section", TwoColumnSection),
+  defineCmsComponent("hero-section", HeroSection),
 ]);
 
 export const cmsRendererOptions: CmsRendererOptions<StarterRenderContext> = {

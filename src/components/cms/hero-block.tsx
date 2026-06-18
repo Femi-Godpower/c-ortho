@@ -11,7 +11,7 @@ export function HeroBlock({
   renderer,
 }: CmsComponentRenderProps<StarterRenderContext>) {
   const title = asString(component.fields.title, "Welcome");
-  const subtitle = asString(component.fields.subtitle, "");
+  const subtitle =  asString(component.fields.subtitle, "");
 
   const callToAction = renderer.render(component.fields.call_to_action) as ReactNode;
   const children = renderer.renderChildren(component) as ReactNode;

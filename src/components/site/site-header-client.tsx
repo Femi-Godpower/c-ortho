@@ -406,6 +406,9 @@ export function SiteHeaderClient(props: SiteHeaderClientProps) {
   const checkoutPath = localizedCommerceUtilityPath("checkout", currentLocale, routing);
   const wishlistPath = localizedCommerceUtilityPath("wishlist", currentLocale, routing);
   const accountPath = localizeRelativePath("/account", currentLocale, routing);
+  const designPath = localizeRelativePath("/design", currentLocale, routing);
+  const aboutPath = localizeRelativePath("/about", currentLocale, routing);
+  const forKidsPath = localizeRelativePath("/for-the-kids", currentLocale, routing);
   const categoryLinks = useMemo(
     () => props.categories
       .map((entry) => {
@@ -503,120 +506,47 @@ export function SiteHeaderClient(props: SiteHeaderClientProps) {
   };
 
   return (
-    <header className="border-b bg-background/80 backdrop-blur">
-      <div className="container flex h-14 items-center justify-between gap-3">
-        <Link href={homePath as Route} className="font-semibold">
-          {dictionary.brandName}
+    <header className="border-b border-como-100 bg-white h-20 flex items-center">
+      <div className="container mx-auto flex items-center justify-between px-6">
+        
+        {/* Left Side: Logo & Brand Name */}
+        <Link href={homePath as Route} className="flex items-center gap-6 group">
+          <img 
+            src="/single-ring-logo.svg" 
+            alt="C-ortho Logo" 
+            style={{ height: "32px", width: "auto" }}
+            className="transition-transform group-hover:scale-105" 
+          />
+          <span className="text-xl font-medium tracking-tight text-como-950">
+            {dictionary.brandName || "C-ortho"}
+          </span>
         </Link>
 
-        <nav className="flex items-center gap-2">
-          <Link href={contactPath as Route} className="text-sm text-muted-foreground hover:text-foreground">
-            {dictionary.nav.contact}
+        {/* Center: Navigation Links */}
+        <nav className="hidden md:flex items-center gap-8">
+          <Link href={homePath as Route} className="text-[15px] font-medium text-como-500 hover:text-como-950 transition-colors">
+            Home
           </Link>
-
-          {props.enableCommerceProducts && (
-            <Link
-              href={productsPath as Route}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-transparent text-muted-foreground transition hover:border-border hover:bg-accent hover:text-foreground"
-              aria-label={dictionary.nav.product}
-            >
-              <PackageSearch className="h-4 w-4" />
-            </Link>
-          )}
-
-          {props.enableCommerceCategories && categoryLinks.length > 0 && (
-            <details className="group relative">
-              <summary className="list-none [&::-webkit-details-marker]:hidden">
-                <span className="inline-flex h-9 cursor-pointer items-center justify-center gap-1 rounded-md border border-transparent px-2 text-xs text-muted-foreground transition hover:border-border hover:bg-accent hover:text-foreground">
-                  <Menu className="h-4 w-4" />
-                  <ChevronDown className="h-3 w-3 transition group-open:rotate-180" />
-                  <span className="sr-only">{dictionary.nav.category}</span>
-                </span>
-              </summary>
-
-              <div className="absolute right-0 top-10 z-40 min-w-48 rounded-md border bg-background p-2 shadow-xl">
-                <p className="px-2 pb-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
-                  Categories
-                </p>
-                {categoryLinks.map((entry) => (
-                  <Link
-                    key={entry.id}
-                    href={entry.path as Route}
-                    className="block rounded px-2 py-1.5 text-sm text-muted-foreground transition hover:bg-accent hover:text-foreground"
-                  >
-                    {entry.label}
-                  </Link>
-                ))}
-                <Link
-                  href={productsPath as Route}
-                  className="mt-1 block rounded px-2 py-1.5 text-xs font-medium text-primary transition hover:bg-accent"
-                >
-                  Browse all products
-                </Link>
-              </div>
-            </details>
-          )}
-
-          {props.enableCommerceCart && (
-            <CartDrawer
-              title={dictionary.nav.cart}
-              cartPath={cartPath}
-              checkoutPath={checkoutPath}
-              checkoutEnabled={props.enableCommerceCheckout}
-              emptyText="Your cart is empty."
-              viewCartText="View cart"
-              checkoutText="Checkout"
-            />
-          )}
-
-          {props.enableCommerceWishlist && (
-            <Link
-              href={wishlistPath as Route}
-              className="relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-transparent text-muted-foreground transition hover:border-border hover:bg-accent hover:text-foreground"
-              aria-label={dictionary.nav.wishlist}
-            >
-              <Heart className="h-4 w-4" />
-              {commerce.wishlist.length > 0 && (
-                <span className="absolute -right-1 -top-1 rounded-full bg-primary px-1.5 text-[10px] font-semibold text-primary-foreground">
-                  {commerce.wishlist.length > 99 ? "99+" : commerce.wishlist.length}
-                </span>
-              )}
-            </Link>
-          )}
-
-          {props.enableAuth && (
-            <Link
-              href={accountPath as Route}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-transparent text-muted-foreground transition hover:border-border hover:bg-accent hover:text-foreground"
-              aria-label={dictionary.nav.account}
-            >
-              <UserCircle2 className="h-4 w-4" />
-            </Link>
-          )}
-
-          {showLocaleSwitcher && (
-            <LocaleSwitcher
-              languageLabel={dictionary.switcher.languageLabel}
-              languageValue={activeLanguage}
-              languageOptions={languageOptions.map((entry) => ({
-                code: entry.language,
-                label: entry.label,
-              }))}
-              onLanguageChange={onLanguageChange}
-              {...(props.localeSegmentStrategy === "country-language" && activeCountryCode
-                ? {
-                  countryLabel: dictionary.switcher.countryLabel,
-                  countryValue: activeCountryCode,
-                  countryOptions: countryOptions.map((entry) => ({
-                    code: entry.code,
-                    label: entry.label,
-                  })),
-                  onCountryChange,
-                }
-                : {})}
-            />
-          )}
+          <Link href={designPath as Route} className="text-[15px] font-medium text-como-500 hover:text-como-950 transition-colors">
+            Design
+          </Link>
+          <Link href={aboutPath as Route} className="text-[15px] font-medium text-como-500 hover:text-como-950 transition-colors">
+            About
+          </Link>
+          <Link href={contactPath as Route} className="text-[15px] font-medium text-como-500 hover:text-como-950 transition-colors">
+            Contact us
+          </Link>
         </nav>
+
+        <div className="flex items-center">
+          <Link 
+            href={forKidsPath as Route} 
+            className="bg-como-950 hover:bg-como-900 text-como-50 text-sm font-medium px-5 py-2.5 rounded-lg transition-colors shadow-sm focus:border-como-50"
+          >
+            Voor de Kids
+          </Link>
+        </div>
+
       </div>
     </header>
   );
