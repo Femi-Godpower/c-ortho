@@ -187,7 +187,6 @@ function buildLocalizedCommerceRewrites(): RewriteRule[] {
 }
 
 const nextConfig: NextConfig = {
-  distDir: "build",
   reactStrictMode: true,
   transpilePackages: ["@ominity/api-module-forms"],
   async rewrites() {
