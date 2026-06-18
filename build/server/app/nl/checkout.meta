@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(commerce)/layout,_N_T_/(commerce)/[segment]/layout,_N_T_/(commerce)/[segment]/checkout/layout,_N_T_/(commerce)/[segment]/checkout/page,_N_T_/nl/checkout"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGNvbW1lcmNlKQ/$d$segment/checkout/__PAGE__",
+    "/!KGNvbW1lcmNlKQ/$d$segment/checkout",
+    "/!KGNvbW1lcmNlKQ/$d$segment",
+    "/!KGNvbW1lcmNlKQ",
+    "/_index",
+    "/_head"
+  ]
+}

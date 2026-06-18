@@ -1,0 +1,18 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(auth)/layout,_N_T_/(auth)/[segment]/layout,_N_T_/(auth)/[segment]/auth/layout,_N_T_/(auth)/[segment]/auth/register/layout,_N_T_/(auth)/[segment]/auth/register/page,_N_T_/nl/auth/register"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGF1dGgp/$d$segment/auth/register/__PAGE__",
+    "/!KGF1dGgp/$d$segment/auth/register",
+    "/!KGF1dGgp/$d$segment/auth",
+    "/!KGF1dGgp/$d$segment",
+    "/!KGF1dGgp",
+    "/_index",
+    "/_head"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "status": 404,
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(auth)/layout,_N_T_/(auth)/account/layout,_N_T_/(auth)/account/page,_N_T_/account"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGF1dGgp/account/__PAGE__",
+    "/!KGF1dGgp/account",
+    "/!KGF1dGgp",
+    "/_index",
+    "/_head"
+  ]
+}

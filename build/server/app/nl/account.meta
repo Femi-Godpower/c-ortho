@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/(auth)/layout,_N_T_/(auth)/[segment]/layout,_N_T_/(auth)/[segment]/account/layout,_N_T_/(auth)/[segment]/account/page,_N_T_/nl/account"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/!KGF1dGgp/$d$segment/account/__PAGE__",
+    "/!KGF1dGgp/$d$segment/account",
+    "/!KGF1dGgp/$d$segment",
+    "/!KGF1dGgp",
+    "/_index",
+    "/_head"
+  ]
+}
